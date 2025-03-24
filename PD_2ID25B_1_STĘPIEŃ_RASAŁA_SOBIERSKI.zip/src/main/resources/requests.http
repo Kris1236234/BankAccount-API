@@ -1,0 +1,10 @@
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "firstName": "Krystian",
+  "lastName": "Stępień",
+  "iban": "PL6110901014000007121981273",
+  "pesel": "00313008494",
+  "email": "krystian.stepien4@o2.pl"
+}
