@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "65bc2075-fd50-4c52-8be4-9d58dfa5c920",
+		"name": "Bank Account API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43163635"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/accounts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Katarzyna\",\r\n  \"lastName\": \"Kowalska\",\r\n  \"iban\": \"PL61109010140000071219812874\",\r\n  \"pesel\": \"44051401359\",\r\n  \"email\": \"s12345@student.tu.kielce.pl\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				},
+				"description": "Create Account"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts/00313008494/deposit?amount=350",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts/00313008494/deposit?amount=350",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"00313008494",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "350"
+						}
+					]
+				},
+				"description": "Deposit"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts/00313008494/withdraw?amount=150",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts/00313008494/withdraw?amount=150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"00313008494",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "150"
+						}
+					]
+				},
+				"description": "Withdraw\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts/transfer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fromPesel\": \"00313008494\",\r\n  \"toPesel\": \"00352235734\",\r\n  \"amount\": 100.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"transfer"
+					]
+				},
+				"description": "Transfer"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Jan\",\r\n  \"lastName\": \"Kowalski\",\r\n  \"iban\": \"PL61109010140000068025812874\",\r\n  \"pesel\": \"12345\",  //  niepoprawna suma kontrolna\r\n  \"email\": \"s91338@student.tu.kielce.pl\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					]
+				},
+				"description": "Validations"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts/00313008494",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"NoweImie\",\r\n  \"lastName\": \"NoweNazwisko\",\r\n  \"iban\": \"PL61109010140000071219812874\",\r\n  \"email\": \"s12345@student.tu.kielce.pl\",\r\n  \"pesel\": \"44051401359\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/accounts/00313008494",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"00313008494"
+					]
+				},
+				"description": "Actualization"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/accounts/00313008494",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts/00313008494",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts",
+						"00313008494"
+					]
+				},
+				"description": "Delete Account\r\n"
+			},
+			"response": []
+		}
+	]
+}
